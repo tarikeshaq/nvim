@@ -26,7 +26,7 @@ A modular Neovim configuration focused on Rust, Scala, and web development with 
 
 2. **Clone this repository**:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/nvim-config.git ~/.config/nvim
+   git clone https://github.com/tarikeshaq/nvim.git ~/.config/nvim
    ```
 
 3. **Launch Neovim**:

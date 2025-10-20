@@ -52,6 +52,7 @@ map('v', '<leader>hs', function() gitsigns.stage_hunk {vim.fn.line('.'), vim.fn.
 map('v', '<leader>hr', function() gitsigns.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end, { desc = 'Reset selected lines' })
 map('n', '<leader>hS', gitsigns.stage_buffer, { desc = 'Stage buffer' })
 map('n', '<leader>hu', gitsigns.undo_stage_hunk, { desc = 'Undo stage hunk' })
+map('v', '<leader>hu', function() gitsigns.undo_stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end, { desc = 'Unstage selected lines' })
 map('n', '<leader>hR', gitsigns.reset_buffer, { desc = 'Reset buffer' })
 map('n', '<leader>hp', gitsigns.preview_hunk, { desc = 'Preview hunk' })
 map('n', '<leader>hP', gitsigns.preview_hunk_inline, { desc = 'Preview hunk inline' })
