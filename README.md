@@ -4,12 +4,12 @@
 
 > **Fun fact**: This README was written by Claude Code, so I may have missed a detail or two. If something seems off, trust your instincts over my documentation!
 
-A modular Neovim configuration focused on Rust, Scala, and web development with modern LSP, completion, and git integration.
+A modular Neovim configuration focused on Go, Rust, Scala, and web development with modern LSP, completion, and git integration.
 
 ## Features
 
 - **Plugin Management**: [lazy.nvim](https://github.com/folke/lazy.nvim) for fast, lazy-loaded plugins
-- **LSP Support**: Built-in LSP configuration for Lua, CSS, OCaml, Rust (via rustaceanvim), and Scala (via nvim-metals)
+- **LSP Support**: Built-in LSP configuration for Lua, CSS, OCaml, Go (via gopls), Rust (via rustaceanvim), and Scala (via nvim-metals)
 - **Completion**: nvim-cmp with LSP and buffer sources
 - **Syntax Highlighting**: Treesitter with incremental selection
 - **Git Integration**: gitsigns.nvim for inline diffs, staging, and blame
@@ -45,6 +45,7 @@ A modular Neovim configuration focused on Rust, Scala, and web development with 
   - `lua-language-server` for Lua
   - `css-languageserver` for CSS
   - `ocamllsp` for OCaml
+  - `gopls` for Go
   - Rust: managed by rustaceanvim
   - Scala: managed by nvim-metals
 
@@ -65,6 +66,7 @@ A modular Neovim configuration focused on Rust, Scala, and web development with 
 │   │   ├── git.lua                   # Git integration
 │   │   └── after/
 │   │       └── ftplugin/
+│   │           ├── go.lua            # Go-specific config
 │   │           └── rust.lua          # Rust-specific config
 │   └── plugins/
 │       └── init.lua                  # Plugin specifications

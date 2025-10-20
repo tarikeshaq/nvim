@@ -65,6 +65,22 @@ vim.lsp.enable('cssls')
 
 vim.lsp.enable('ocamllsp')
 
+-- Go LSP (gopls)
+vim.lsp.config('gopls', {
+    settings = {
+        gopls = {
+            analyses = {
+                unusedparams = true,
+                shadow = true,
+            },
+            staticcheck = true,
+            gofumpt = true,
+        },
+    },
+})
+
+vim.lsp.enable('gopls')
+
 
 -- Keymaps for lsp
 local map = vim.keymap.set

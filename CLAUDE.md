@@ -27,14 +27,16 @@ The init.lua loads modules in this specific order:
 
 ### Language Server Configuration
 - LSP setup uses Neovim's built-in vim.lsp.config() and vim.lsp.enable() APIs (not lspconfig setup functions)
-- Configured LSPs: lua_ls, cssls, ocamllsp
+- Configured LSPs: lua_ls, cssls, ocamllsp, gopls
 - Rust uses rustaceanvim instead of standard LSP config
 - Scala uses nvim-metals with automatic FileType detection
+- Go uses gopls with gofumpt formatting and staticcheck enabled
 - LSP keybindings are defined in lua/config/lsp.lua (not config.keybinds.lua)
 
 ### Filetype-Specific Configuration
 - Rust: lua/config/after/ftplugin/rust.lua overrides K and adds <leader>a for RustLsp actions
 - Scala: nvim-metals auto-attaches via FileType autocmd
+- Go: lua/config/after/ftplugin/go.lua configures tabs, format-on-save, import organization, and Go-specific commands
 
 ### Key Plugin Integrations
 
@@ -86,6 +88,12 @@ The init.lua loads modules in this specific order:
 - <leader>dt: Toggle breakpoint
 - <leader>dso: Step over
 - <leader>dsi: Step into
+
+### Go (in .go files)
+- <leader>gt: Run go test ./...
+- <leader>gr: Run current go file
+- <leader>gb: Build go project
+- Format and organize imports automatically on save
 
 ### Git (normal mode)
 **Hunk Navigation:**
