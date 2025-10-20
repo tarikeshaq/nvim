@@ -34,9 +34,9 @@ The init.lua loads modules in this specific order:
 - LSP keybindings are defined in lua/config/lsp.lua (not config.keybinds.lua)
 
 ### Filetype-Specific Configuration
-- Rust: lua/config/after/ftplugin/rust.lua overrides K and adds <leader>a for RustLsp actions
+- Rust: after/ftplugin/rust.lua overrides K and adds <leader>a for RustLsp actions
 - Scala: nvim-metals auto-attaches via FileType autocmd
-- Go: lua/config/after/ftplugin/go.lua configures tabs, format-on-save, import organization, and Go-specific commands
+- Go: after/ftplugin/go.lua configures tabs, format-on-save, import organization, and Go-specific commands
 
 ### Key Plugin Integrations
 
@@ -164,7 +164,7 @@ When modifying this configuration:
 1. **Adding LSPs**: Configure in lua/config/lsp.lua using vim.lsp.config() then vim.lsp.enable()
 2. **Adding plugins**: Add to the return table in lua/plugins/init.lua
 3. **Adding keybinds**: Add to lua/config/keybinds.lua for general bindings, lua/config/lsp.lua for LSP-specific, or lua/config/git.lua for git-specific
-4. **Filetype-specific setup**: Create files in lua/config/after/ftplugin/{filetype}.lua
+4. **Filetype-specific setup**: Create files in after/ftplugin/{filetype}.lua (NOT in lua/config/after/ftplugin/)
 
 ## Editor Settings
 

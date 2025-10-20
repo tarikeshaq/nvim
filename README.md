@@ -63,13 +63,13 @@ A modular Neovim configuration focused on Go, Rust, Scala, and web development w
 │   │   ├── cmp.lua                   # Completion setup
 │   │   ├── treesitter.lua            # Syntax highlighting
 │   │   ├── colorscheme.lua           # Theme
-│   │   ├── git.lua                   # Git integration
-│   │   └── after/
-│   │       └── ftplugin/
-│   │           ├── go.lua            # Go-specific config
-│   │           └── rust.lua          # Rust-specific config
+│   │   └── git.lua                   # Git integration
 │   └── plugins/
 │       └── init.lua                  # Plugin specifications
+├── after/
+│   └── ftplugin/
+│       ├── go.lua                    # Go-specific config
+│       └── rust.lua                  # Rust-specific config
 └── CLAUDE.md                         # Development guide
 ```
 
@@ -116,7 +116,7 @@ This configuration is designed to be modular. To customize:
 - **Add plugins**: Edit `lua/plugins/init.lua`
 - **Add LSPs**: Edit `lua/config/lsp.lua`
 - **Add keybindings**: Edit appropriate config file in `lua/config/`
-- **Language-specific settings**: Create files in `lua/config/after/ftplugin/`
+- **Language-specific settings**: Create files in `after/ftplugin/`
 
 ## License
 
