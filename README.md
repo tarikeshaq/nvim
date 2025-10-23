@@ -12,7 +12,7 @@ A modular Neovim configuration focused on Go, Rust, Scala, and web development w
 - **LSP Support**: Built-in LSP configuration for Lua, CSS, OCaml, Go (via gopls), Rust (via rustaceanvim), and Scala (via nvim-metals)
 - **Completion**: nvim-cmp with LSP and buffer sources
 - **Syntax Highlighting**: Treesitter with incremental selection
-- **Git Integration**: gitsigns.nvim for inline diffs, staging, and blame
+- **Git Integration**: gitsigns.nvim for inline diffs, staging, and blame; diffview.nvim for advanced diff viewing
 - **Navigation**: fzf-lua for fuzzy finding, hop.nvim for quick jumps, nvim-tree for file exploration
 - **Debugging**: nvim-dap integration with Scala and Rust support
 - **Theme**: Catppuccin Macchiato
@@ -29,7 +29,20 @@ A modular Neovim configuration focused on Go, Rust, Scala, and web development w
    git clone https://github.com/tarikeshaq/nvim.git ~/.config/nvim
    ```
 
-3. **Launch Neovim**:
+3. **Run the setup script** (optional but recommended for optimal git integration):
+   ```bash
+   cd ~/.config/nvim
+   ./setup.sh
+   ```
+
+   This configures git settings for optimal integration with diffview.nvim and gitsigns.nvim:
+   - Sets diff algorithm to histogram for better diffs
+   - Configures Neovim as the default diff and merge tool
+   - Enables rerere (reuse recorded resolution) for merge conflicts
+   - Sets merge conflict style to zdiff3 for clearer conflict markers
+   - Additional quality-of-life git configurations
+
+4. **Launch Neovim**:
    ```bash
    nvim
    ```
@@ -93,13 +106,22 @@ Leader key: `Space`
 - `<leader>ft` - Format
 - `[c` / `]c` - Previous/next diagnostic
 
-### Git
+### Git (gitsigns)
 - `]h` / `[h` - Next/previous hunk
 - `<leader>hs` - Stage hunk
 - `<leader>hr` - Reset hunk
 - `<leader>hp` - Preview hunk
 - `<leader>hd` - Diff view
 - `<leader>hb` - Blame line
+
+### Git (diffview)
+- `<leader>gdo` - Open diffview
+- `<leader>gdc` - Close diffview
+- `<leader>gdh` - Diffview file history (all files)
+- `<leader>gdf` - Diffview current file history
+- `<leader>gdb` - Compare HEAD against a specific branch
+- `<leader>gdr` - Refresh diffview
+- `<leader>gdt` - Toggle diffview files panel
 
 ### Debugging
 - `<leader>dc` - Continue

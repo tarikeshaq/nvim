@@ -71,3 +71,17 @@ map('n', '<leader>tw', gitsigns.toggle_word_diff, { desc = 'Toggle word diff' })
 
 -- Text object for hunks (works in visual/operator pending mode)
 map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'Select hunk' })
+
+-- Diffview keybindings (using <leader>gd prefix to avoid visual mode conflict)
+map('n', '<leader>gdo', '<cmd>DiffviewOpen<CR>', { desc = 'Open diffview' })
+map('n', '<leader>gdc', '<cmd>DiffviewClose<CR>', { desc = 'Close diffview' })
+map('n', '<leader>gdh', '<cmd>DiffviewFileHistory<CR>', { desc = 'Diffview file history' })
+map('n', '<leader>gdf', '<cmd>DiffviewFileHistory %<CR>', { desc = 'Diffview current file history' })
+map('n', '<leader>gdr', '<cmd>DiffviewRefresh<CR>', { desc = 'Refresh diffview' })
+map('n', '<leader>gdt', '<cmd>DiffviewToggleFiles<CR>', { desc = 'Toggle diffview files panel' })
+map('n', '<leader>gdb', function()
+    local branch = vim.fn.input('Compare against branch: ')
+    if branch ~= '' then
+        vim.cmd('DiffviewOpen ' .. branch)
+    end
+end, { desc = 'Diffview compare against branch' })
